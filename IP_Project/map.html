@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Geo location</title>
+</head>
+<body style="background-color:black; color: greenyellow;">
+    <h1> HTML5 Geolocation API </h1>
+    <div id="output"></div>
+    <br><br>
+    <form>
+        <input type="button" onclick="homepage()" value="Home">
+    </form>
+</body>
+<script>
+    function homepage(){
+                window.location.href = "http://localhost/IP_Project/homepage.html";
+            }
+
+    if(!navigator.geolocation){
+        throw new Error("No geolocation available");
+    }
+    function success(pos){
+
+        const lat = pos.coords.latitude;
+        const lng = pos.coords.longitude;
+        const markup = `
+        <a href="https://www.openstreetmap.org/#map=16/${lat}/${lng}">
+        Your current position: latitude: ${lat}, longitude: ${lng}.
+        </a>    
+        `;
+
+        document.getElementById('output').innerHTML = markup;
+    }
+    function error(err){
+        if(err.code == 1){
+            alert("Please allow access to geolocation");
+        }
+        else{
+            alert("Position unavailable");
+        }
+    }
+    const options = {
+        enableHighAccuracy: true,
+    };
+
+    navigator.geolocation.getCurrentPosition(success, error, options);
+</script>
+</html>

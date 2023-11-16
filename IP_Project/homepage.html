@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Breakdown Assistance System</title>
+        <h1 style="text-align: center;"><u><b><i>On-Road Vehicle Breakdown Assisting System</i></b></u></h1>
+    </head>
+    <body style="color: greenyellow; background-image: url('https://www.liveabout.com/thmb/kMYVDEsNAIf2qyFEKAfXEvwQ7BI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-522272311-5949bdc15f9b58d58a035319.jpg');">
+        <center>
+            <hr>
+            <h1>User Module</h1>
+            <form action="/IP_Project/homepage.html" method="POST">
+                <table>
+                    <tr>
+                        <th>
+                            <p1>Select Action: </p1>
+                        </th>
+                        <td>
+                            <select id="pick" name="pick">
+                                <option value=""></option>
+                                <option value="http://localhost/IP_Project/register.php">Register</option>
+                                <option value="http://localhost/IP_Project/login.php">Login</option>
+                                <option value="http://localhost/IP_Project/mechanicdetails.html">Search Mechanic Details</option>
+                                <option value="http://localhost/IP_Project/map.html">View Google Geo Location</option>
+                                <option value="http://localhost/IP_Project/feedback.php">Post Feedback</option>
+                                <option value="http://localhost/IP_Project/profile.html">My Profile</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            <hr><br>
+
+            <h1>Admin Module</h1>
+            
+                <table>
+                    <tr>
+                        <th>Select Action: </th>
+                    <td>
+                        <select id="pick2" name="pick2">
+                            <option value=""></option>
+                            <option value="">Provide Approval</option>
+                        </select>
+                    </td>
+                    </tr>
+                </table>
+            <hr><br>
+
+            <h1>Mechanic Module</h1>
+            
+                <table>
+                    <tr>
+                        <th>
+                            <p1>Select Action: </p1>
+                        </th>
+                        <td>
+                            <select id="pick3" name="pick3">
+                                <option value=""></option>
+                                <option value="http://localhost/IP_Project/mregister.php">Register</option>
+                                <option value="http://localhost/IP_Project/mlogin.php">Login</option>
+                                <option value="">Post Bussiness</option>
+                                <option value="">Manage Bussiness</option>
+                                <option value="">View Feedback</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <hr>
+        </center>
+        <script>
+            document.getElementById("pick").addEventListener("change",function(){
+                var x = this.value;
+                if(x){
+                    window.location.href=x;
+                }
+            })
+
+            document.getElementById("pick2").addEventListener("change",function(){
+                var x = this.value;
+                if(x){
+                    window.location.href=x;
+                }
+            })
+
+            document.getElementById("pick3").addEventListener("change",function(){
+                var x = this.value;
+                if(x){
+                    window.location.href=x;
+                }
+            })
+        </script>
+    </body>
+</html>
